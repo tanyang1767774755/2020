@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#define _CRT_SECURE_NO_WARNINGS 1
 //#include<stdio.h>
 //int main()
 //{
@@ -34,25 +33,48 @@
 //	return 0;
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//int main()
+//{
+//	int n = 10;
+//	int a;
+//
+//	scanf("%d", &n);
+//	int* p = (int*)(malloc(n*sizeof(int)));
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	else
+//	{
+//		free(p);
+//		p = NULL;
+//	}
+//
+//	return 0;
+//}
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 int main()
 {
-	int n = 10;
-	int a;
+	int a[10][10], m, n, i, j;
 
-	scanf("%d", &n);
-	int* p = (int*)(malloc(n*sizeof(int)));
-	if (p == NULL)
+	scanf("%d %d", &n, &m);
+	for (i = 0; i<10; i++)
 	{
-		printf("%s\n", strerror(errno));
+		for (j = 0; j<10; j++)
+		{
+			a[i][j] = (i + 1)*(j + 1);
+		}
 	}
-	else
+	for (i = 0; i<n; i++)
 	{
-		free(p);
-		p = NULL;
+		for (j = 0; j<m; j++)
+		{
+			printf("%2d ", a[i][j]);
+		}
+		printf("\n");
 	}
-
 	return 0;
 }
